@@ -1,21 +1,69 @@
-@font-face {
-  font-family: 'senbold';
-  src: url('../fonts/sen-bold-webfont.woff2') format('woff2'),
-  url('../fonts/sen-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  &.is-multiline {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 760px) {
+
+    &.is-mobile {
+      display: block;
+    }
+  }
 }
-@font-face {
-  font-family: 'senextrabold';
-  src: url('../fonts/sen-extrabold-webfont.woff2') format('woff2'),
-  url('../fonts/sen-extrabold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'senregular';
-  src: url('../fonts/sen-regular-webfont.woff2') format('woff2'),
-  url('../fonts/sen-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  &.is-narrow {
+    flex: none;
+    width: unset;
+  }
+
+  &.is-4 {
+    width: calc(100% / 12 * 4);
+    flex:none;
+  }
+
+  &.is-8 {
+    width: calc(100% / 12 * 8);
+    flex:none;
+  }
+
+  &.is-12 {
+    width: 100%;
+    flex:none;
+  }
+
+  &.is-offset-2 {
+    margin-left: calc(100% / 12 * 2);
+  }
+
+  @media screen and (max-width: 900px) {
+
+    &.is-10-tablet {
+      width: calc(100% / 12 * 10);
+      flex:none;
+    }
+    &.is-offset-tablet-1 {
+      margin-left: calc(100% / 12 * 1);
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+
+    &.is-12-mobile {
+      width: 100%;
+      flex:none;
+    }
+    &.is-offset-mobile-0 {
+      margin-left: 0;
+    }
+  }
 }

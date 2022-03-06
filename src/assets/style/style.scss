@@ -1,60 +1,41 @@
-@font-face {
-  font-family: 'senbold';
-  src: url('./fonts/sen-bold-webfont.woff2') format('woff2'),
-  url('./fonts/sen-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'senextrabold';
-  src: url('./fonts/sen-extrabold-webfont.woff2') format('woff2'),
-  url('./fonts/sen-extrabold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'senregular';
-  src: url('./fonts/sen-regular-webfont.woff2') format('woff2'),
-  url('./fonts/sen-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import "reset.css";
+@import "fonts";
+@import "variables";
+@import "grid";
+@import "commons";
 
-body {
+#app {
+  height: 100vh;
   font-family: 'senregular', serif;
+  color: $dark;
+
+  @media screen and (max-width: 760px) {
+    height: auto;
+    padding: 2.5em 0;
+  }
 }
 
-h1 {
-  font-family: 'senbold', serif;
-}
-.row {
+.home-view {
   display: flex;
-  justify-content: space-between;
-
-  &.is-multiline {
-    flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+  @media screen and (max-width: 760px) {
+    padding: $padding;
   }
+}
+button {
+  background: $hopper-blue;
+  color: $dark;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid $hopper-blue;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
-  .column {
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    &.is-4 {
-      flex: none;
-      width: 33.33333%;
-    }
-
-    &.is-8 {
-      flex: none;
-      width: 66.66667%;
-    }
-
-    &.is-12 {
-      flex: none;
-      width: 100%;
-    }
+  &:hover {
+    background: white;
+    color: $hopper-blue;
+    transition: all 0.2s ease-in-out;
   }
-
 }

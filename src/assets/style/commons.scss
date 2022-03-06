@@ -1,38 +1,8 @@
-@import "reset.css";
-@import "fonts";
 @import "variables";
-@import "grid";
-
-#app {
-  height: 100vh;
-  font-family: 'senregular', serif;
-  color: $dark;
-
-  @media screen and (max-width: 760px) {
-    height: auto;
-    padding: 2.5em 0;
-  }
-}
+@import "fonts";
 
 h1 {
   font-family: 'senbold', serif;
-}
-
-.has-text-centered {
-  text-align: center;
-}
-
-.has-text-right {
-  text-align: right;
-}
-
-.home-view {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  @media screen and (max-width: 760px) {
-    padding: 1.5em;
-  }
 }
 
 .has-grey-background {
@@ -49,25 +19,16 @@ h1 {
   height: 100%;
 }
 
-.pb-2 {
-  padding-bottom: 0.5em;
+.has-text-centered {
+  text-align: center;
 }
 
-button {
-  background: $hopper-blue;
-  color: $dark;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid $hopper-blue;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+.has-text-right {
+  text-align: right;
+}
 
-  &:hover {
-    background: white;
-    color: $hopper-blue;
-    transition: all 0.2s ease-in-out;
-  }
+.has-gray-text {
+  color: $grey;
 }
 
 .dark-text {
@@ -90,8 +51,8 @@ button {
   font-family: 'senbold', serif;
 }
 
-.has-gray-text {
-  color: $grey;
+.pb-2 {
+  padding-bottom: 0.5em;
 }
 
 .mb-2 {

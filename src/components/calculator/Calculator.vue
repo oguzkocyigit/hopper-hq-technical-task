@@ -1,26 +1,35 @@
 <template>
-  <div class="result-wrapper">
-    <div class="columns">
-      <div class="column is-12">
-        <p>Hours Saved</p>
-        <p>388</p>
-      </div>
-      <div class="column is-12">
-        <p>Money Saved</p>
-        <p>$18,635</p>
-      </div>
-      <div class="column is-12">
-        <button>Try Waybook Now</button>
+  <div class="calculator-wrapper">
+    <div class="row has-justify-content is-multiline has-full-height">
+      <div class="column is-12" v-for="(data,key) in calculatorData" :key="key">
+        <RangeSlider @calculate="calculate" :settings="data"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import RangeSlider from '../range-slider/RangeSlider'
+
 export default {
-  name: 'Result',
+  name: 'Calculator',
+  props: {
+    calculatorData: {required: true}
+  },
+  components: {
+    RangeSlider,
+  },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    calculate(data) {
+      this.$emit('calculate', data)
+    }
+  }
 }
 </script>
 
-<style lang="scss" src="./Result.scss"/>
+<style lang="scss" src="./Calculator.scss"/>
 
