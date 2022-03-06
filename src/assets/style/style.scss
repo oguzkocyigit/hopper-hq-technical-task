@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'senbold';
+  src: url('./fonts/sen-bold-webfont.woff2') format('woff2'),
+  url('./fonts/sen-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'senextrabold';
+  src: url('./fonts/sen-extrabold-webfont.woff2') format('woff2'),
+  url('./fonts/sen-extrabold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'senregular';
+  src: url('./fonts/sen-regular-webfont.woff2') format('woff2'),
+  url('./fonts/sen-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'senregular', serif;
+}
+
+h1 {
+  font-family: 'senbold', serif;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+
+  &.is-multiline {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    &.is-4 {
+      flex: none;
+      width: 33.33333%;
+    }
+
+    &.is-8 {
+      flex: none;
+      width: 66.66667%;
+    }
+
+    &.is-12 {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+}
